@@ -149,6 +149,14 @@ open class Theme {
                     style = "hljs-class-hljs-title"
                 }
 
+                if styleList.contains("hljs-title class_") && themeDict["hljs-title-class"] != nil {
+                    style = "hljs-title-class"
+                }
+
+                if styleList.contains("hljs-title class_ inherited__") && themeDict["hljs-title-class-inherited"] != nil {
+                    style = "hljs-title-class-inherited"
+                }
+
                 if let themeStyle = themeDict[style] as? [AttributedStringKey: Any]
                 {
                     for (attrName, attrValue) in themeStyle
